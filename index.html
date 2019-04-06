@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Tube Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+</head>
+<body>
+    
+    <div container="col-md-12">
+        
+        <div class="jumbotron">
+            <h1 id="titleText"  class="display-4">Plant Watering Schedule</h1>
+        </div>
+        
+        <div container="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    
+                    
+                    <div id='tableWrapper'>
+                            <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Plant Name</th>
+                                        <th scope="col">Last Watering</th>
+                                        <th scope="col">Frequency</th>
+                                        <th scope="col">Next Watering</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td id="plantName-table"></td>
+                                        <td id="lastWatering-table"></td>
+                                        <td id="frequency-table"></td>
+                                        <td id="nextWatering-table"></td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table>
+                        
+                    </div>
+                    <h2 class="card-text">Plant Info</h2>
+                    
+                    <form>
+                        
+                        <div class="form-group">
+                            
+                            <label for="nameOfPlant">Plant Name</label>
+                            <input id="plantName-input" type="text" class="form-control" >
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group">
+                            <label for="lastWatered">Last Watered</label>
+                            <input id="lastWatering-input" type="text" class="form-control">
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label id="frequency" for="frequency">Frequency</label>
+                            <input type="text" id="frequency-input" class="form-control">
+                        </div>
+                        
+                        <!-- <div class="form-group">
+                            <label  for="nextWatering">Next Watering</label>
+                            <input id="nextWatering-input"  type="text" class="form-control">
+                        </div> -->
+
+                        <button id="addBtn" type="submit" class="btn btn-success">Add </button>
+                        <button id="clearBtn" type="submit" class="btn btn-warning">Clear</button>
+
+                    </form>
+                </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    
+
+</body>
+</html>
