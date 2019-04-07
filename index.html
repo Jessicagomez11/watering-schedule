@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Tube Schedule</title>
+    <title>Keeping Plants Alive!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 <body>
     
@@ -26,20 +28,17 @@
                             <table class="table table-bordered">
                                     <thead>
                                       <tr>
-                                        <th scope="col">#</th>
+                                      
                                         <th scope="col">Plant Name</th>
                                         <th scope="col">Last Watering</th>
-                                        <th scope="col">Frequency</th>
+                                        <th scope="col">Frequency (x's per week)</th>
                                         <th scope="col">Next Watering</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id='infoGoesHere'>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td id="plantName-table"></td>
-                                        <td id="lastWatering-table"></td>
-                                        <td id="frequency-table"></td>
-                                        <td id="nextWatering-table"></td>
+                                       
+                                       
                                       </tr>
                                      
                                     </tbody>
@@ -59,14 +58,14 @@
                         
                         
                         <div class="form-group">
-                            <label for="lastWatered">Last Watered</label>
-                            <input id="lastWatering-input" type="text" class="form-control">
+                            <label for="lastWatered">Last Watered On</label>
+                            <input id="lastWatering-input" type="date" class="form-control">
                         </div>
                         
                         
                         <div class="form-group">
-                            <label id="frequency" for="frequency">Frequency</label>
-                            <input type="text" id="frequency-input" class="form-control">
+                            <label id="frequency" for="frequency">Frequency (times per week)</label>
+                            <input type="number" id="frequency-input" class="form-control">
                         </div>
                         
                         <!-- <div class="form-group">

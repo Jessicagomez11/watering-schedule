@@ -24,47 +24,48 @@
 
     var name = document.getElementById("plantName-input").value
     console.log(name)
-    var nextWatering = document.getElementById("nextWatering-input").value
-    console.log(nextWatering)
     var lastWatering = document.getElementById("lastWatering-input").value
     console.log(lastWatering)
     var frequency = document.getElementById("frequency-input").value
     console.log(frequency)
+    var nextWatering= 
 
-    //htis functiion adds the input to the database
+    //THIS FUNCTION ADDS THE INPUT TO THE DATABASE
     database.ref().push({
         //saving these values in firebase under the names on the left of the colon
         Name: name,
-        // nextWatering: nextWatering,
         LastWatered: lastWatering,
-        Frequency:frequency
+        howOften: frequency,
+        // NextWatering: nextWatering,
     })
   })
 
 
-  //pulling the values from firebase
-  database.ref().on('value', function(snapshot){
-    console.log("this is the snapshot" + snapshot.val())
-      //add a new row to the table
-      //add a new colum for each thing 
-// var nameTbDisp = document.getElementById('plantName-table')
-$('#plantName-table').text(snapshot.val().name)
-$('#lastWatering-table').text(snapshot.val().lastWatering)
-$('#frequency-table').text(snapshot.val().frequency)
-// $('#nextWatering-table').text(snapshot.val())
+  //THIS FUNCITON PULLS THE VALUES FROM FIREBASE
+  database.ref().on('child_added', function(snapshot){
 
-
-
+    const child = snapshot.val();
+    console.log("This is the snapshot", child);
+     
+      makerow(child)
   })
 
-   
-    //to get the values from the input boxes
-    //store them into the firebase database with the .set method
+//THIS FUNCTION MAKES THE NEW ROW WITH THE INFO FROM THE USER
+  function makerow(child){
+    
+        var newRow= $('<tr>').append(
+        $('<td>').text(child.Name),
+         $('<td>').text(child.LastWatered),
+         $('<td>').text(child.howOften),
+         $('<td>').text(child.NextWatering)
+      
+         )
+         
+      $('#infoGoesHere').append(newRow)
 
-    // then we call them back from datase and display them onto the DOM
-        //displaying them in a table
-        //ceate rows and table data in javasccript
-        //how am i going to start a new row
+  }
+
+   
 
 
 
