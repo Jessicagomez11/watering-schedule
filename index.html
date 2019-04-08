@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Keeping Plants Alive!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- materialize -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- my css -->
+      <link rel='stylesheet' href="style.css">
+   <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Neuton:200,400" rel="stylesheet">
+   <!-- moment -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
+
 <body>
-    
-    <div container="col-md-12">
-        
-        <div class="jumbotron">
-            <h1 id="titleText"  class="display-4">Plant Watering Schedule</h1>
+
+    <div class="">
+
+        <div class="jumbotron white">
+            <h1 id="titleText" class="display-4 ">Plant Watering Schedule</h1>
+            <h5>
+               Ah, ah, ah, ah Staying Alive!
+              </h5>
         </div>
-        
-        <div container="col-md-12">
+
+        <div class="container col l6">
             <div class="card">
                 <div class="card-body">
-                    
-                    
                     <div id='tableWrapper'>
-                            <table class="table table-bordered">
-                                    <thead>
-                                      <tr>
-                                      
-                                        <th scope="col">Plant Name</th>
-                                        <th scope="col">Last Watering</th>
-                                        <th scope="col">Frequency (x's per week)</th>
-                                        <th scope="col">Next Watering</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id='infoGoesHere'>
-                                      <tr>
-                                       
-                                       
-                                      </tr>
-                                     
-                                    </tbody>
-                                  </table>
-                        
+                        <table class="table table-bordered centered highlight">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Plant Name</th>
+                                    <th scope="col">Last Watering</th>
+                                    <th scope="col">Frequency </th>
+                                    <!-- <th scope="col">days since last watering </th> -->
+                                    <th scope="col">Next Watering</th>
+                                    <th scope="col">Time Until Next Watering</th>
+                                </tr>
+                            </thead>
+                            <tbody id='infoGoesHere'>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
-                    <h2 class="card-text">Plant Info</h2>
-                    
+                </div>
+            </div>   
+        </div>
+
+
+
+        <div class="container col l6" >
+            <div class="card">
+                <div class="card-body">
+                    <h3 id='heading'class="card-text">Plant Info</h3>
+
                     <form>
-                        
+
                         <div class="form-group">
-                            
+
                             <label for="nameOfPlant">Plant Name</label>
-                            <input id="plantName-input" type="text" class="form-control" >
+                            <input id="plantName-input" type="text" class="form-control form">
                         </div>
-                        
-                        
-                        
+
+
+
                         <div class="form-group">
                             <label for="lastWatered">Last Watered On</label>
-                            <input id="lastWatering-input" type="date" class="form-control">
+                            <input id="lastWatering-input" type="date" class="form-control form">
                         </div>
-                        
-                        
+
+
                         <div class="form-group">
-                            <label id="frequency" for="frequency">Frequency (times per week)</label>
-                            <input type="number" id="frequency-input" class="form-control">
+                            <label id="frequency" for="frequency">Frequency (once every  __  days)</label>
+                            <input type="number" id="frequency-input" class="form-control form">
                         </div>
-                        
+
                         <!-- <div class="form-group">
                             <label  for="nextWatering">Next Watering</label>
                             <input id="nextWatering-input"  type="text" class="form-control">
                         </div> -->
 
-                        <button id="addBtn" type="submit" class="btn btn-success">Add </button>
-                        <button id="clearBtn" type="submit" class="btn btn-warning">Clear</button>
+                        <button id="addBtn" type="submit" class="btn waves-effect teal darken-4">Add </button>
+                        <button id="clearBtn" type="submit" class="btn waves-effect teal darken-4 ">Clear</button>
 
                     </form>
                 </div>
-      </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
-    
+            </div>
+        </div>
+        <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- materialize -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- my js -->
+        <script src="app.js"></script>
+        <!-- moment -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </body>
+
 </html>

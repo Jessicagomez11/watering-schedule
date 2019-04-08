@@ -1,0 +1,17 @@
+#titleText,
+#heading{
+    font-family: 'Neuton', serif;
+    font-weight: 800;
+}
+body{
+    background-color: #e0f2f1;
+}
+th{
+    font-family: 'Neuton', serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+h5{
+    font-family: 'Neuton', serif;
+    font-weight: 300;
+}
