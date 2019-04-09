@@ -89,20 +89,12 @@ function makerow(child) {
 
   $('#infoGoesHere').append(newRow)
 
-
-
   if (child.TimeTillNextWatering === 3){
-  //  var haveYouWateredToday = confirm("It's time to water the " + child.Name + ".  Have you watered  it today?" )
-  //  if (haveYouWateredToday){
-      var lastWatering= moment().format('LL')
-     console.log(lastWatering)
+   var haveYouWateredToday = confirm("It's time to water the " + child.Name + ".  Have you watered  it today?" )
+   if (haveYouWateredToday){
+     child.LastWatered.textContent= moment().format('LL')
 
    }
   }
 
-
-
-
-
-
-
+}
